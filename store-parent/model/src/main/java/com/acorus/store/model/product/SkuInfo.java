@@ -1,6 +1,7 @@
 package com.acorus.store.model.product;
 
 import com.acorus.store.model.base.BaseEntity;
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -57,7 +58,7 @@ public class SkuInfo extends BaseEntity {
 	private String skuDefaultImg;
 
 	@ApiModelProperty(value = "是否销售（1：是 0：否）")
-	@TableField("is_sale")
+	@TableField(value = "is_sale",fill = FieldFill.INSERT)
 	private Integer isSale;
 
 	@TableField(exist = false)

@@ -33,7 +33,7 @@ public class GmallCacheAspect {
     private RedissonClient redissonClient;//上锁
 
     //方法  完成缓存的方法
-    @Around(value = "@annotation(com.atguigu.gmall.common.cache.GmallCache)")//进入此切面方法的条件
+    @Around(value = "@annotation(com.acorus.store.common.cache.GmallCache)")//进入此切面方法的条件
     public Object cacheAspectMethod(ProceedingJoinPoint pjp){
         //获取前缀
         MethodSignature signature = (MethodSignature) pjp.getSignature();//签名==当前方法的  public  返回值  包名+ 类名 + 方法名 + 入参

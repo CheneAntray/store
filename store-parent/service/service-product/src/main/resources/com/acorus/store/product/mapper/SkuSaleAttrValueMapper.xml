@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acorus.store.product.mapper.SkuSaleAttrValueMapper">
+    <select id="getSkuValueIdsMap" resultType="map">
+        SELECT
+            GROUP_CONCAT(ssav.sale_attr_value_id order by  ssv.base_sale_attr_id  separator '|') value_ids,
+            sku_id
+        FROM
+            sku_sale_attr_value ssav
+        INNER JOIN spu_sale_attr_value ssv
+        ON ssv.id=ssav.sale_attr_value_id and ssv.spu_id=ssav.spu_id
+        WHERE ssav.spu_id=#{spuId}
+        GROUP BY ssav.sku_id
+    </select>
+</mapper>
