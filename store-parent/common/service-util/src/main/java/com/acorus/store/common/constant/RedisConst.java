@@ -7,14 +7,21 @@ package com.acorus.store.common.constant;
  */
 public class RedisConst {
 
+    //skuinfo的rediskey信息
     public static final String SKUKEY_PREFIX = "sku:";
     public static final String SKUKEY_SUFFIX = ":info";
+    //category的rediskey信息
+    public static final String CATEGORYKEY_PREFIX = "category:";
+    public static final String SALEATTRKEY_PREFIX = "saleattr:";
+    public static final String SKUVALUEIDSMAP_PREFIX = "skuvalueidsmap:";
     //单位：秒
     public static final long SKUKEY_TIMEOUT = 24 * 60 * 60;
     //单位：秒 尝试获取锁的最大等待时间
     public static final long SKULOCK_EXPIRE_PX1 = 1;
     //单位：秒 锁的持有时间
     public static final long SKULOCK_EXPIRE_PX2 = 10;
+    //单位：秒 锁的持有时间2
+    public static final long SKULOCK_EXPIRE_PX3 = 2;
     public static final String SKULOCK_SUFFIX = ":lock";
 
     public static final String USER_KEY_PREFIX = "user:";

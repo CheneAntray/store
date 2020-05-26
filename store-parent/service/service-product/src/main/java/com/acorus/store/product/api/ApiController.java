@@ -31,7 +31,7 @@ public class ApiController {
      * @Description: 根据skuId 查询skuInfo 和sku 图片信息
      */
     @GetMapping("inner/getSkuInfo/{skuId}")
-    public SkuInfo getSkuInfoById(@PathVariable("skuId")Long skuId){
+    public SkuInfo getSkuInfoById(@PathVariable("skuId")Long skuId) throws InterruptedException {
         SkuInfo skuInfo =  apiService.getSkuInfoById(skuId);
         return skuInfo;
     }
@@ -53,7 +53,7 @@ public class ApiController {
      * where c3.id= 61
      */
     @GetMapping("inner/getCategoryView/{category3Id}")
-    public BaseCategoryView getCategoryView(@PathVariable("category3Id") Long category3Id){
+    public BaseCategoryView getCategoryView(@PathVariable("category3Id") Long category3Id) throws InterruptedException {
         return apiService.getCategoryView(category3Id);
     }
 
@@ -74,7 +74,7 @@ public class ApiController {
      */
     @GetMapping("inner/getSpuSaleAttrListCheckBySku/{skuId}/{spuId}}")
     public List<SpuSaleAttr> getSpuSaleAttrListCheckBySku(@PathVariable("skuId")Long skuId,
-                                                          @PathVariable("spuId")Long spuId){
+                                                          @PathVariable("spuId")Long spuId) throws InterruptedException {
         return apiService.getSpuSaleAttrListCheckBySku(skuId,spuId);
     }
 
@@ -85,7 +85,7 @@ public class ApiController {
      * 后台要生成一个“属性值1|属性值2|属性值3：skuId”的一个json串以提供页面进行匹配
      */
     @GetMapping("inner/getSkuValueIdsMap/{spuId}")
-    public Map  getSkuValueIdsMap(@PathVariable("spuId")Long spuId){
+    public Map  getSkuValueIdsMap(@PathVariable("spuId")Long spuId) throws InterruptedException {
         return apiService.getSkuValueIdsMap(spuId);
     }
 }

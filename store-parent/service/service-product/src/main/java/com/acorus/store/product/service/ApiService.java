@@ -13,13 +13,13 @@ import java.util.Map;
  * @create 2020-05-19 11:07
  */
 public interface ApiService {
-    SkuInfo getSkuInfoById(Long skuId);
+    SkuInfo getSkuInfoById(Long skuId) throws InterruptedException;
 
-    BaseCategoryView getCategoryView(Long category3Id);
+    BaseCategoryView getCategoryView(Long category3Id) throws InterruptedException;
 
     BigDecimal getSkuPrice(Long skuId);
 
-    List<SpuSaleAttr> getSpuSaleAttrListCheckBySku(Long skuId, Long spuId);
+    List<SpuSaleAttr> getSpuSaleAttrListCheckBySku(Long skuId, Long spuId) throws InterruptedException;
 
-    Map<String, Object> getSkuValueIdsMap(Long spuId);
+    Map<String, Object> getSkuValueIdsMap(Long spuId) throws InterruptedException;
 }

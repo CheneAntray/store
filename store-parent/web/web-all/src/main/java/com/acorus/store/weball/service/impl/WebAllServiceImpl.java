@@ -1,7 +1,7 @@
 package com.acorus.store.weball.service.impl;
 
 import com.acorus.store.item.client.ItemFeignClient;
-import com.acorus.store.weball.service.ItemWebService;
+import com.acorus.store.weball.service.WebAllService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,16 +9,15 @@ import java.util.Map;
 
 /**
  * @author CheneAntray
- * @create 2020-05-20 16:20
+ * @create 2020-05-22 15:25
  */
 @Service
-public class ItemWebServiceImpl implements ItemWebService {
+public class WebAllServiceImpl implements WebAllService {
 
     @Autowired
     private ItemFeignClient itemFeignClient;
-
     @Override
-    public Map getItemWeb(Long skuId) {
+    public Map<String, Object> getItemWeb(Long skuId) {
         return itemFeignClient.getItem(skuId);
     }
 }
